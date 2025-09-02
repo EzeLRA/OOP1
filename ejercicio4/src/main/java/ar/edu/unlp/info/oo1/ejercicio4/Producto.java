@@ -32,4 +32,9 @@ public class Producto {
 	public void setPrecioPorKilo(double precio) {
 		this.precioPorKilo = precio;
 	}
+
+	public boolean equals(Producto prod) {
+		return (this.peso == prod.getPeso())&&(this.descripcion == prod.getDescripcion())&&(this.precioPorKilo == prod.getPrecioPorKilo());
+	}
+	
 }

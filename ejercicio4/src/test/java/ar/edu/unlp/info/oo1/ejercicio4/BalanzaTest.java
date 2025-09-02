@@ -3,6 +3,8 @@ package ar.edu.unlp.info.oo1.ejercicio4;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
+import java.util.Iterator;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -55,7 +57,12 @@ public class BalanzaTest {
     assertEquals(2, ticket.getCantidadDeProductos());
     assertEquals(23 * 0.21, ticket.impuesto(), 0.1);
     assertEquals(LocalDate.now(), ticket.getFecha());
-
+    
+    //Evaluar el ticket
+    Iterator<Producto> detalle = ticket.getProductos().iterator();
+    assert(detalle.next().equals(queso));
+    assert(detalle.next().equals(jamon));
+    
     // Cambios de precios no tienen que afectar a tickets emitidos
     queso.setPrecioPorKilo(200);
     jamon.setPrecioPorKilo(160);

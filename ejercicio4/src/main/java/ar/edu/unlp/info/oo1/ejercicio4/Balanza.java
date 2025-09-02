@@ -20,7 +20,7 @@ public class Balanza {
 	}
 	
 	public Ticket emitirTicket(){
-		return new Ticket(this.getCantidadDeProductos(),this.getPesoTotal(),this.getPrecioTotal());
+		return new Ticket(this.productos);
 	}
 
 	public float getPesoTotal() {
