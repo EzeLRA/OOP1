@@ -1,37 +1,37 @@
 package ar.edu.unlp.info.oo1.ejercicio5;
 
-public class Circulo {
+public class Circulo extends Figura2D{
 	
-	private float radio;
-	private float diametro;
+	private double radio;
+	private double diametro;
 	
 	public Circulo() {
 		this.radio = 0;
 		this.diametro = 0;
 	}
 	
-	public float getDiametro() {
+	public double getDiametro() {
 		return (this.diametro != 0.0)?(this.diametro):(this.radio*2);
 	}
 	
-	public void setDiametro(float valor) {
+	public void setDiametro(double valor) {
 		this.diametro = valor;
 	}
 	
-	public float getRadio() {
+	public double getRadio() {
 		return this.radio;
 	}
 	
-	public void setRadio(float valor) {
+	public void setRadio(double valor) {
 		this.radio = valor;
 	}
 	
-	public float getPerimetro() {
-		return (float) (Math.PI * (this.diametro));
+	public double getPerimetro() {
+		return Math.PI * this.getDiametro();
 	}
 	
-	public float getArea() {
-		return (float) (Math.PI * (this.radio * this.radio));
+	public double getArea() {
+		return Math.PI * (this.radio * this.radio);
 	}
 	
 }
