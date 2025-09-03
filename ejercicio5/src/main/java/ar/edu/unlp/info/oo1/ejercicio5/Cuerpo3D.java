@@ -2,14 +2,14 @@ package ar.edu.unlp.info.oo1.ejercicio5;
 
 public class Cuerpo3D {
 	
-	private float altura;
+	private double altura;
 	private Figura2D caraBasal;
 	
 	public void setAltura(float valor) {
 		this.altura = valor;
 	}
 	
-	public float getAltura() {
+	public double getAltura() {
 		return this.altura;
 	}
 	
@@ -18,7 +18,7 @@ public class Cuerpo3D {
 	}
 	
 	public double getVolumen() {
-		return this.getSuperficieExterior() * this.altura;
+		return this.caraBasal.getArea() * this.altura;
 	}
 	
 	public double getSuperficieExterior() {
