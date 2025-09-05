@@ -1,0 +1,53 @@
+·contexto:
+Desarrollo de una plataforma para 
+una empresa de mantenimiento de viviendas.
+
+·que ofrece:
+Contrataciones de los servicios que ofrece 
+y los montos a pagar por los mismos.
+
+·con quienes interactua:
+Se desea manejar clientes, de los cuales en principio se
+describen el nombre y apellido,y su dirección.
+
+·que pueden hacer los mismos sujetos:
+Cada cliente puede contratar servicios, que pueden ser
+de limpieza o de parquización.
+
+·consideraciones para las tarifas de los servicios:
+De los servicios de limpieza se provee un precio por hora,
+una cantidad de horas y una tarifa mínima. Por otro lado,
+del servicio de parquización se provee un precio por hora, 
+una cantidad de horas, cantidad de máquinas a utilizar y 
+un costo de mantenimiento de las mismas.
+
+·que puede hacer la empresa:
++Contratar por única vez: Dados un cliente, la fecha y un servicio. 
+ El servicio quedará contratado para dicho cliente en la fecha especificada.
+
++Contratar de forma prolongada: dados un cliente, un servicio, 
+ una fecha inicial y una cantidad de días (asumir que esta cantidad es siempre mayor a uno). 
+ El servicio quedará contratado por dicho cliente la cantidad de días especificada.
+ 
++Obtener el monto a pagar por un cliente: dado un cliente, 
+ se retorna el monto a abonar por todos los servicios contratados, 
+ según se describe a continuación:
+
+  ● El monto a abonar por las contrataciones por única vez es el monto a abonar del servicio. En
+  caso de ser contratado para un fin de semana se cobra un recargo del 15%.
+  ● El monto a abonar por las contrataciones prolongadas es el monto a abonar del servicio
+  multiplicado por la cantidad de días que fue contratado. En caso de haber sido contratado por
+  más de 5 días se le realiza un descuento del 10%.
+
+En cuanto a los servicios, el monto a abonar se calcula de la siguiente manera:
+
+  ● El monto a abonar de los servicios de limpieza 
+  se calcula como el precio por hora multiplicado
+  por la cantidad de horas. Este valor no debe ser menor a la tarifa mínima 
+  y en caso de serlo, se abonará dicha tarifa.
+  ● El monto a abonar de los servicios de parquización se calcula como el precio por hora
+  multiplicado por la cantidad de horas y a este monto se le adiciona el costo de mantenimiento
+  de las máquinas multiplicado por la cantidad de máquinas.
+
++Obtener la cantidad de servicios de un cliente con monto mayor a un valor: dado un valor, se retorna
+ la cantidad de servicios que contrató un cliente cuyos montos a abonar lo superan.
