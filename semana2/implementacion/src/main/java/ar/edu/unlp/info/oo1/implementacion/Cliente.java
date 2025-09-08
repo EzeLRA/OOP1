@@ -33,6 +33,10 @@ public class Cliente {
 	public List<Contrato> getContratos() {
 		return this.contratos;
 	}
+	
+	public void agregarContrato(Contrato c) {
+		this.contratos.add(c);
+	}
 
 	public boolean equals(Cliente c) {
 		return (this.nombre.equals(c.getNombre()))&&(this.apellido.equals(c.getApellido()))&&(this.direccion.equals(c.getDireccion()));
