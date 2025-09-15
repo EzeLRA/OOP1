@@ -1,0 +1,18 @@
+Contexto del problema
+Diseño de una aplicacion para inversores , que permita manejar 
+la inversion en acciones y plazos fijos
+
+Conceptos candidatos
++ Aplicacion movil
+  + Inversor
+  + Cartera de inversiones
+    + Inversion e Inversiones
+      + Accion/Acciones
+        + Nombre
+        + Cantidad
+        + Valor unitario
+      + Plazo fijo
+        + Fecha
+        + Monto depositado
+        + Porcentaje de interes
+  
