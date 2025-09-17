@@ -1,0 +1,19 @@
+Contexto:
+ Una distribuidora electrica quiere gestionar los consumos de sus
+ usuarios para la emision de facturas de cobro
+
+Conceptos clave:
++ Distribuidora electrica
+  + Facturas de cobro
+    + Usuario
+    + fecha de emision
+    + bonificacion
+    + monto final
+      + factor de potencia
+  + Usuarios
+    + nombre y domicilio(unico)
+    + consumos
+      + consumo de energia activa (medido en kWh)
+      + consumo de energia reactiva (medido en kVArh)
+  + cuadro tarifario (usado para calculos)
+  
