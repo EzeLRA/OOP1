@@ -1,0 +1,11 @@
+Contexto:
+Desarrollar una red de alumbrado para un sistema de red de farolas
+
+Candidatos(a clases o funciones):
+
++ Red de alumbrado(tipo grafo)
+  + Farola
+  + crear farola
+  + conectar farola con farola vecina
+  + encender farola
+  + apagar farola
