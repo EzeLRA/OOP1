@@ -9,16 +9,20 @@ public class Mamifero {
 	private Date fechaNacimiento;
 	private Mamifero padre;
 	private Mamifero madre;
-	private Mamifero abueloMaterno;
-	private Mamifero abuelaMaterna;
-	private Mamifero abueloPaterno;
-	private Mamifero abuelaPaterna;
+	
+	public Mamifero() {
+		
+	}
+	
+	public Mamifero(String nom) {
+		this.id = nom;
+	}
 	
 	//Metodos
-	public String getId() {
+	public String getIdentificador() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setIdentificador(String id) {
 		this.id = id;
 	}
 	public String getEspecie() {
@@ -46,46 +50,53 @@ public class Mamifero {
 		this.madre = madre;
 	}
 	public Mamifero getAbueloMaterno() {
-		return abueloMaterno;
-	}
-	public void setAbueloMaterno(Mamifero abueloMaterno) {
-		this.abueloMaterno = abueloMaterno;
+		if(this.tieneMadre()) {
+			return this.madre.getPadre();
+		}else{
+			return null;
+		}
 	}
 	public Mamifero getAbuelaMaterna() {
-		return abuelaMaterna;
-	}
-	public void setAbuelaMaterna(Mamifero abuelaMaterna) {
-		this.abuelaMaterna = abuelaMaterna;
+		if(this.tieneMadre()) {
+			return this.madre.getMadre();
+		}else{
+			return null;
+		}
 	}
 	public Mamifero getAbueloPaterno() {
-		return abueloPaterno;
-	}
-	public void setAbueloPaterno(Mamifero abueloPaterno) {
-		this.abueloPaterno = abueloPaterno;
+		if(this.tienePadre()) {
+			return this.padre.getPadre();
+		}else{
+			return null;
+		}
 	}
 	public Mamifero getAbuelaPaterna() {
-		return abuelaPaterna;
+		if(this.tienePadre()) {
+			return this.padre.getMadre();
+		}else{
+			return null;
+		}
 	}
-	public void setAbuelaPaterna(Mamifero abuelaPaterna) {
-		this.abuelaPaterna = abuelaPaterna;
+	private boolean tienePadre() {
+		return (this.padre != null);
+	}
+	private boolean tieneMadre() {
+		return (this.madre != null);
 	}
 	public boolean tieneComoAncestroA(Mamifero unMamifero) {
-		return (this.especie.equals(unMamifero.getEspecie()));
-		//Debo comparar si un mamifero nacio mucho antes que el mamifero
+		if (this.tienePadre()) {
+	        if (this.padre == unMamifero || this.padre.tieneComoAncestroA(unMamifero)) {
+	            return true;
+	        }
+	    }
+		
+	    if (this.tieneMadre()) {
+	        if (this.madre == unMamifero || this.madre.tieneComoAncestroA(unMamifero)) {
+	            return true;
+	        }
+	    }
+	    
+	    return false;
 	}
-	
-	private boolean esPariente(Mamifero mamifero) {
-		return (this.abuelaMaterna.equals(mamifero))||
-				(this.abuelaPaterna.equals(mamifero))||
-				(this.abueloMaterno.equals(mamifero))||
-				(this.abueloPaterno.equals(mamifero))||
-				(this.padre.equals(mamifero))||
-				(this.madre.equals(mamifero));
-	}
-	
-	public boolean equals(Mamifero mamifero) {
-		return (this.id.equals(mamifero.getId()))&&(this.especie.equals(mamifero.getEspecie()))&&(this.fechaNacimiento.equals(mamifero.getFechaNacimiento()));
-	}
-	
 	
 }
