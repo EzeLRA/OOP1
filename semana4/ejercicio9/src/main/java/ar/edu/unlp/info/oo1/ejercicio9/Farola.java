@@ -1,5 +1,6 @@
 package ar.edu.unlp.info.oo1.ejercicio9;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Farola {
@@ -8,11 +9,13 @@ public class Farola {
 	
 	public Farola(){
 		this.estado = false;
+		this.farolasVecinas = new LinkedList<Farola>();	
 	}
-	
 	public void pairWithNeighbor( Farola otraFarola ) {
-		//tiene que ser capaz de determinar si ya existe una vinculacion
-		this.farolasVecinas.add(otraFarola);
+		if(!this.farolasVecinas.contains(otraFarola)) {
+			this.farolasVecinas.add(otraFarola);
+			otraFarola.pairWithNeighbor(this);
+		}
 	}
 	
 	public List<Farola> getNeighbors (){
