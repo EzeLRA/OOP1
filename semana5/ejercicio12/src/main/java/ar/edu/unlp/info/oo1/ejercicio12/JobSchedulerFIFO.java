@@ -6,11 +6,8 @@ public class JobSchedulerFIFO extends JobScheduler{
 		super();
 	}
 	
-	public JobDescription next() {
-		if (!this.jobs.isEmpty()){
-			return super.next(0);
-		}
-		return null;
+	protected JobDescription getNext() {
+		return this.getJobs().get(0);
 	}
 	
 }

@@ -24,19 +24,19 @@ public class JobSchedulerTest {
         this.initializeJobs();
     }
 
-    private JobScheduler newFifoScheduler() {
+    private JobSchedulerFIFO newFifoScheduler() {
         return new JobSchedulerFIFO();
     }
 
-    private JobScheduler newLifoScheduler() {
+    private JobSchedulerLIFO newLifoScheduler() {
         return new JobSchedulerLIFO();
     }
 
-    private JobScheduler newPriorityScheduler() {
+    private JobSchedulerMaxPriority newPriorityScheduler() {
         return new JobSchedulerMaxPriority();
     }
 
-    private JobScheduler newEffortScheduler() {
+    private JobSchedulerMaxEffort newEffortScheduler() {
         return new JobSchedulerMaxEffort();
     }
 

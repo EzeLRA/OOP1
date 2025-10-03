@@ -6,10 +6,8 @@ public class JobSchedulerLIFO extends JobScheduler{
 		super();
 	}
 	
-	public JobDescription next() {
-		if (!this.jobs.isEmpty()){
-			return super.next(this.jobs.size()-1);
-		}
-		return null;
+	protected JobDescription getNext() {
+		return this.getJobs().get(this.jobs.size()-1);
 	}
+	
 }
