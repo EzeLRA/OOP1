@@ -3,7 +3,7 @@ package ar.edu.unlp.info.oo1.ejercicio13;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class InversionPlazoFijo extends Inversion{
+public class InversionPlazoFijo implements Inversion{
 	private Date fecha;
 	private double montoDepositado;
 	private double porcentajeInteres;
@@ -30,11 +30,14 @@ public class InversionPlazoFijo extends Inversion{
 		Date fechaActual = new Date(); //Fecha actual
 		long difMillis = fechaActual.getTime() - this.fecha.getTime();
 		long diasDif = TimeUnit.DAYS.convert(difMillis,TimeUnit.MILLISECONDS);
-		return this.montoDepositado * porcentajeInteres * diasDif; //Probar
+		return this.montoDepositado * porcentajeInteres * diasDif;
 	}
 
-	public boolean equals(InversionPlazoFijo obj) {
-		return (this.fecha.equals(obj.getFecha()))&&(this.montoDepositado == obj.getMontoDepositado())&&(this.porcentajeInteres == obj.getPorcentajeInteres());
+	public boolean equals(Inversion obj) {
+		if (obj instanceof InversionPlazoFijo) {
+			return (this.fecha.equals(((InversionPlazoFijo) obj).getFecha()))&&(this.montoDepositado == ((InversionPlazoFijo) obj).getMontoDepositado())&&(this.porcentajeInteres == ((InversionPlazoFijo) obj).getPorcentajeInteres());
+		}
+		return false;	
 	}
 		
 }

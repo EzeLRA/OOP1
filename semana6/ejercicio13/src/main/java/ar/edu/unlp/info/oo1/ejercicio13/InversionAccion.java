@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo1.ejercicio13;
 
-public class InversionAccion extends Inversion{
+public class InversionAccion implements Inversion{
 	private String nombre;
 	private int cantidad;
 	private double valorUnitario;
@@ -18,7 +18,15 @@ public class InversionAccion extends Inversion{
 	public void setValorUnitario(double valor) {
 		this.valorUnitario = valor;
 	}
-	
+		
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public double getValorUnitario() {
+		return valorUnitario;
+	}
+
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -27,8 +35,11 @@ public class InversionAccion extends Inversion{
 		return this.cantidad * this.valorUnitario;
 	}
 
-	public boolean equals(String nom) {
-		return this.nombre.equals(nom);
+	public boolean equals(Inversion obj) {
+		if (obj instanceof InversionAccion) {
+			return this.nombre.equals(((InversionAccion) obj).getNombre());
+		}
+		return false;
 	}
 	
 }

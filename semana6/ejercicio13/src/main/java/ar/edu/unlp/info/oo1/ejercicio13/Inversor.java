@@ -1,10 +1,15 @@
 package ar.edu.unlp.info.oo1.ejercicio13;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Inversor {
 	private List<Inversion> inversiones;
+	
+	public Inversor() {
+		this.inversiones = new LinkedList();
+	}
 	
 	public double getValorTotal() {
 	    return this.inversiones.stream()
@@ -16,37 +21,23 @@ public class Inversor {
 		return this.inversiones;
 	}
 	
-	public boolean invertirAccion(String nom,int cant,double valor) {
-		InversionAccion inversion = new InversionAccion(nom,cant,valor);
-		if (!this.inversiones.contains(inversion)){
+	public boolean invertir(Inversion inversion) {
+		if (this.inversiones.isEmpty()) {
 			this.inversiones.add(inversion);
 			return true;
 		}
-		return false;
-	}
-	
-	public boolean depositarPlazoFijo(Date fecha,double monto,double porcentaje) {
-		InversionPlazoFijo inversion = new InversionPlazoFijo(fecha,monto,porcentaje);
-		if (!this.inversiones.contains(inversion)){
-			this.inversiones.add(inversion);
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean dejarInvertirAccion(String nom) {
 		for(Inversion inv : this.getInversiones()){
-			if(inv.equals(nom)) {
-				this.inversiones.remove(inv);
-				return true;
+			if(inv.equals(inversion)) {
+				return false;
 			}
 		}
-		return false;
+		this.inversiones.add(inversion);
+		return true;
 	}
 	
-	public boolean dejarInvertirPlazoFijo(Date fecha) {
+	public boolean dejarInvertir(Inversion inversion) {
 		for(Inversion inv : this.getInversiones()){
-			if(inv.equals(fecha)) {
+			if(inv.equals(inversion)) {
 				this.inversiones.remove(inv);
 				return true;
 			}
