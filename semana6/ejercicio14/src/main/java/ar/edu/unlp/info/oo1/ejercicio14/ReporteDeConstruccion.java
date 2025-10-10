@@ -1,4 +1,4 @@
-package java.ar.edu.unlp.info.oo1.ejercicio14;
+package ar.edu.unlp.info.oo1.ejercicio14;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -8,6 +8,10 @@ public class ReporteDeConstruccion {
 	
 	public ReporteDeConstruccion() {
 		this.piezas = new LinkedList();
+	}
+	
+	public List<Pieza> getPiezas(){
+		return this.piezas;
 	}
 	
 	public void agregarPieza(Pieza pieza) {

@@ -1,4 +1,4 @@
-package java.ar.edu.unlp.info.oo1.ejercicio14;
+package ar.edu.unlp.info.oo1.ejercicio14;
 
 public class Esfera extends Pieza{
 	private double radio;

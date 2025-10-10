@@ -1,4 +1,4 @@
-package java.ar.edu.unlp.info.oo1.ejercicio14;
+package ar.edu.unlp.info.oo1.ejercicio14;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,11 +30,11 @@ public class PiezaTest {
 	
 	@Test
 	void calcularDatos() {
-		assertEquals(this.pieza1.getVolumen(),62.831853072);
-		assertEquals(this.pieza1.getSuperficie(),87.964594301);
+		assertEquals(this.pieza1.getVolumen(),Math.PI * 4.0 * 5.0);
+		assertEquals(this.pieza1.getSuperficie(),2 * Math.PI * 2.0 * 5.0 + 2 * Math.PI * 4.0);
 		
-		assertEquals(this.pieza2.getVolumen(),33.510321638);
-		assertEquals(this.pieza2.getSuperficie(),50.265482457);
+		assertEquals(this.pieza2.getVolumen(),((4 * Math.PI * Math.pow(2.0, 3))/3));
+		assertEquals(this.pieza2.getSuperficie(),4 * Math.PI * 4.0);
 		
 		assertEquals(this.pieza3.getVolumen(),120.0);
 		assertEquals(this.pieza3.getSuperficie(),188.0);

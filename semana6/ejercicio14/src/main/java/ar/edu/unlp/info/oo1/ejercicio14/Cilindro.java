@@ -1,4 +1,4 @@
-package java.ar.edu.unlp.info.oo1.ejercicio14;
+package ar.edu.unlp.info.oo1.ejercicio14;
 
 public class Cilindro extends Pieza{
 	private double radio;
