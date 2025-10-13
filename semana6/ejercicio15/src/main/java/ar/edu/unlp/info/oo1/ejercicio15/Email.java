@@ -1,12 +1,18 @@
 package ar.edu.unlp.info.oo1.ejercicio15;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Email {
 	private String titulo;
 	private String texto;
-	private String remitente;
 	private List<Archivo> adjuntos;
+	
+	public Email(String titulo,String text) {
+		this.titulo = titulo;
+		this.texto = text;
+		this.adjuntos = new LinkedList<Archivo>();
+	}
 	
 	public String getTitulo() {
 		return this.titulo;
@@ -15,11 +21,7 @@ public class Email {
 	public String getCuerpo() {
 		return this.texto;
 	}
-	
-	public String getRemitente() {
-		return this.remitente;
-	}
-	
+		
 	public void adjuntarArchivo(Archivo archi) {
 		this.adjuntos.add(archi);
 	}

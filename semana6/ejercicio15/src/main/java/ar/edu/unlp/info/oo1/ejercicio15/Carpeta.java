@@ -29,6 +29,14 @@ public class Carpeta {
 		destino.agregar(email);
 	}
 	
+	public List<Email> getEmails(){
+		return this.emails;
+	}
+	
+	public int espacioTotalOcupado() {
+		return this.emails.stream().mapToInt(email -> email.calcularPesoTotal()).sum();
+	}
+	
 	public Email buscarEmail(String texto) {
 		return this.emails.stream().filter(email -> email.getCuerpo().contains(texto)).findFirst().orElse(null);
 	}

@@ -17,11 +17,12 @@ public class ClienteDeCorreo {
 		this.inbox.agregar(email);
 	}
 	
+	public int espacioOcupado() {
+		return this.carpetas.stream().mapToInt(carp -> carp.espacioTotalOcupado()).sum();
+	}
+	
 	public Email buscar(String texto) {
-		if(!this.carpetas.isEmpty()) {
-			this.carpetas.stream().filter(carp -> (carp.buscarEmail(texto) != null));
-		}
-		return null;
+		return this.carpetas.stream().map(carp -> carp.buscarEmail(texto)).filter(res -> res != null).findFirst().orElse(null);
 	}
 	
 }
