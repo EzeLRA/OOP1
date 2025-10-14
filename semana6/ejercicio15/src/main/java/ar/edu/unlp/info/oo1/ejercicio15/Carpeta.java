@@ -24,9 +24,12 @@ public class Carpeta {
 		return this.emails.remove(email);
 	}
 	
-	public void mover(Email email, Carpeta destino) {
-		this.eliminar(email);
-		destino.agregar(email);
+	public boolean mover(Email email, Carpeta destino) {
+		if(this.eliminar(email)) {
+			destino.agregar(email);
+			return true;
+		}
+		return false;
 	}
 	
 	public List<Email> getEmails(){

@@ -1,41 +1,53 @@
 package ar.edu.unlp.info.oo1.ejercicio15;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CorreosTest {
 	private ClienteDeCorreo correo1;
-	private ClienteDeCorreo correo2;
 	
 	@BeforeEach
 	void setUp() {
 		this.correo1 = new ClienteDeCorreo();
-		this.correo2 = new ClienteDeCorreo();
 	}
 	
 	@Test
 	void validarCorreo() {
 		//validar inbox
-		
+		assertFalse(this.correo1.tieneEmails());
 		//validar cantidad de carpetas
-		
-		//Validar correos no recibidos
-		
+		assertEquals(this.correo1.carpetasCant(),1);
 	}
 	
 	@Test
 	void operarCorreo() {
+		Email email1 = new Email("Prueba1","asdf");
+		Email email2 = new Email("Prueba2","fdsg");
+		
 		//validar correos recibidos
+		this.correo1.recibir(email1);
+		this.correo1.recibir(email2);
+		assert(this.correo1.tieneEmails()); //Solo verifica en el buzon principal
 		
 		//validar creacion de carpetas
+		this.correo1.crearCarpeta("Carpeta1");
+		this.correo1.crearCarpeta("Carpeta2");
+		assertEquals(this.correo1.carpetasCant(),3);
 		
 		//validar modificaciones
+		this.correo1.moverEmail(email2, "Buzon de Entrada", "Carpeta1");
+		assert(this.correo1.tieneEmails());
 		
 		//buscar un email en todas las carpetas
-		
-		//validar cantidad de emails en las carpetas
+		assert(this.correo1.buscar("asdf") != null);
+		assert(this.correo1.buscar("fdsg") != null);
+		assertEquals(this.correo1.buscar("ejem"),null); //corregir para que solo busque palabras especificas
 		
 		//validar espacio ocupado
+		assertEquals(this.correo1.espacioOcupado(),22);
 		
 	}
 
