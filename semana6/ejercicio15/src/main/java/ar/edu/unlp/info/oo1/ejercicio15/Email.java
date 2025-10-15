@@ -21,7 +21,11 @@ public class Email {
 	public String getCuerpo() {
 		return this.texto;
 	}
-		
+	
+	public boolean tieneContenido(String text) {
+		return this.titulo.contains(text) || this.texto.contains(text);
+	}
+	
 	public void adjuntarArchivo(Archivo archi) {
 		this.adjuntos.add(archi);
 	}

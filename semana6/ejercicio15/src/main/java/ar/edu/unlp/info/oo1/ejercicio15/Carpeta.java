@@ -40,8 +40,13 @@ public class Carpeta {
 		return this.emails.stream().mapToInt(email -> email.calcularPesoTotal()).sum();
 	}
 	
+	public boolean nombreIgual(String nom) {
+		return this.nombre.equals(nom);
+	}
+	
 	public Email buscarEmail(String texto) {
-		return this.emails.stream().filter(email -> email.getCuerpo().contains(texto)).findFirst().orElse(null);
+		//Tener en cuenta con las delegaciones de responsabilidades
+		return this.emails.stream().filter(email -> email.tieneContenido(texto)).findFirst().orElse(null);
 	}
 	
 }

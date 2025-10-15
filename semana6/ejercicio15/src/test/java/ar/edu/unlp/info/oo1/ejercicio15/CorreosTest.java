@@ -38,12 +38,13 @@ public class CorreosTest {
 		assertEquals(this.correo1.carpetasCant(),3);
 		
 		//validar modificaciones
-		this.correo1.moverEmail(email2, "Buzon de Entrada", "Carpeta1");
+		this.correo1.moverEmail(email2,"Carpeta1");
 		assert(this.correo1.tieneEmails());
 		
 		//buscar un email en todas las carpetas
 		assert(this.correo1.buscar("asdf") != null);
 		assert(this.correo1.buscar("fdsg") != null);
+		assert(this.correo1.buscar("Prueba1") != null);
 		assertEquals(this.correo1.buscar("ejem"),null); //corregir para que solo busque palabras especificas
 		
 		//validar espacio ocupado
