@@ -3,9 +3,16 @@ package ar.edu.unlp.info.oo1.ejercicio16;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class DateLapse {
+import ar.edu.unlp.info.oo1.ejercicio17.DateLapseInterface;
+
+public class DateLapse implements DateLapseInterface{
 	private LocalDate from;
 	private LocalDate to;
+	
+	public DateLapse(LocalDate ini,LocalDate fin) {
+		this.from = ini;
+		this.to = fin;
+	}
 	
 	public DateLapse() {
 		this.from = LocalDate.MIN;
@@ -20,16 +27,12 @@ public class DateLapse {
 		this.to = LocalDate.of(anio, mes, dia);
 	}
 	
-	private boolean esLimiteDe(LocalDate otro) {
-		return this.from.isEqual(otro) || this.to.isEqual(otro);
-	}
-	
 	public int sizeInDays() {
 		return (int) this.from.until(this.to,ChronoUnit.DAYS);
 	}
 	
 	public boolean includesDate(LocalDate other) {
-		return (other.isAfter(this.from) && other.isBefore(this.to)) || this.esLimiteDe(other); 
+		return !other.isBefore(this.from) && !other.isAfter(this.to); 
 	}
 	
 }

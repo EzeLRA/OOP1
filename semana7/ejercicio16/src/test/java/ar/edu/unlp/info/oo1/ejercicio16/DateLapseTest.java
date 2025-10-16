@@ -9,12 +9,14 @@ import java.time.temporal.ChronoUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unlp.info.oo1.ejercicio17.DateLapse2;
+
 public class DateLapseTest {
-	private DateLapse lapso;
+	private DateLapse2 lapso;
 	
 	@BeforeEach
 	void setUp() {
-		this.lapso = new DateLapse();
+		this.lapso = new DateLapse2();
 	}
 	
 	@Test
