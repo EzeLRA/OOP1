@@ -1,0 +1,6 @@
+Conceptos:
+
+(plataforma para gestion de reservas de propiedades)
+(usuarios/inquilinos), (pueden gestionar) -> sus (inmuebles) -> (para su alquiler o hacer reservas)
+de los usuarios se conoce -> (nombre),(direccion) y (dni) 
+cada usuario posee propiedades que desea alquilar -> se guardan (direccion,nombre descriptivo,precio a cobrar por noche)
