@@ -46,4 +46,8 @@ public class DateLapse implements DateLapseInterface{
 		return (other.isAfter(this.from) || other.isEqual(this.from)) && (this.diasDesde(other) <= this.sizeInDays); 
 	}
 	
+	public boolean overlaps(DateLapse other) {
+		return this.includesDate(other.getFrom());
+	}
+	
 }

@@ -11,8 +11,8 @@ public class Reserva {
 		this.lapso.setTo(fin);
 	}
 	
-	public LocalDate getFrom() {
-		return this.lapso.getFrom();
+	public DateLapse getLapso() {
+		return this.lapso;
 	}
 	
 	public boolean esDeterminadaReserva(LocalDate fecha) {
@@ -23,8 +23,9 @@ public class Reserva {
 		return this.lapso.sizeInDays() * costoNoche;
 	}
 	
-	public boolean peiodoReservado(LocalDate ini) {
-		return this.lapso.includesDate(ini);
+	//Recibe una reserva para comparar
+	public boolean peiodoReservado(Reserva reserva) {
+		return this.lapso.overlaps(reserva.getLapso());
 	}
 	
 }

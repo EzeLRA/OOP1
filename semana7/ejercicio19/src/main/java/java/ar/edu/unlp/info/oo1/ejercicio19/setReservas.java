@@ -7,6 +7,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+/*
+ * Para ocasiones en las que en un enunciado en el que parezca que se puede
+ *  implementar una clase que herede caracteristicas de una estructura (como aqui)
+ *  no es necesario hacerlo complejo y puedo simplificarse con el uso de una lista
+ */
+
 public class setReservas<T extends Reserva> implements Set<T> {
 private List<T> elementos;
 	
