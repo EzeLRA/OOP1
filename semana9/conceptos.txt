@@ -1,0 +1,13 @@
+//Cuando un enunciado pide no implementar comportamiento , se refiere a no desarrollar el codigo
+//Pero si deben las clases tener los metodos
+
+aplicacion,viajes,gastos,costo,usuario,nombre,direccion,estadoCuenta,pagoViajes,conductor,pasajero
+vehiculo,descripcion,capacidad,anioFabricacion,valorMercado;
+
+-aplicacion
+-Usuario;nombre,direccion,estadoCuenta,pagoViajes
+-Conductor;vehiculos
+-Vehiculos;descripcion,capacidad,anioFabricacion,valorMercado,chofer
+-Pasajero;saldo
+-Viajes;costoTotal,localidadOrigen,localidadDestino,fechaSalida,pasajeros
+
